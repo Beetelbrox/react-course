@@ -1,24 +1,11 @@
 import React from "react"
 import Joke from "./components/Joke"
+import jokesData from "./jokesData";
 
 const App = () => (
-  <div>
-    <Joke
-      setup="What’s the best thing about Switzerland?"
-      punchline="I don’t know, but the flag is a big plus."
-    />
-    <Joke
-      setup="I invented a new word!"
-      punchline="Plagiarism!"
-    />
-    <Joke
-      setup="Did you hear about the mathematician who’s afraid of negative numbers?"
-      punchline="He’ll stop at nothing to avoid them."
-    />
-    <Joke
-      punchline="Single line joke"
-    />
-  </div>
+  jokesData.map(
+    joke => <Joke setup={joke.setup} punchline={joke.punchline} />
+  )
 );
 
 export default App;

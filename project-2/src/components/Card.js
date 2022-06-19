@@ -1,18 +1,18 @@
 import React from "react";
-import harold from "../img/harold_cropped.png";
 
-const Card = () => (
+
+const Card = (props) => (
     <div className="card">
-        <img src={harold} className="card--image" />
-        <div className="card--label">SOLD OUT</div>
+        <img src={`/img/${props.img}`} className="card--image" />
+        {props.open_spots === 0 && <div className="card--badge">SOLD OUT</div>}
         <div className="card--stats">
             <i className="fa-solid fa-star card--star" />
-            <span>5.0</span>
-            <span className="gray">(6) • </span>
-            <span className="gray">USA</span>
+            <span>{props.rating}</span>
+            <span className="gray">({props.reviewCount}) • </span>
+            <span className="gray">{props.country}</span>
         </div>
-        <p>How to do the thing</p>
-        <p><span className="bold">From $136</span> / person</p>
+        <p className="card--title">{props.title}</p>
+        <p><span className="bold">From ${props.price}</span> / person</p>
     </div>
 );
 

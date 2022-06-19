@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #282D35;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+p {
+  margin: 0;
+}
+
+.red {
+  color: #FF5A5F;
+}
+
+.link {
+  color: gray;
+  text-decoration: underline;
+}
+
+.side-padding {
+  padding: 0 16px;
+}
+
+.app {
+  margin: auto;
+  margin-top: 30px;
+  width : 600px;
+  background-color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 4px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FF5A5F;
+  height: 62px;
+  border-radius: 12px 12px 0 0;
+  color:white;
+  font-size: 20px;
+}
+
+.journal-entry {
+  display: flex;
+  height: 200px;
+  margin: 42px 28px;
+}
+
+.journal-entry__image {
+  width: 140px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.journal-entry__info {
+  display: flex;
+  flex-direction: column;
+  padding: 20px ;
+  padding-right: 0px;
+  justify-content: center;
+}
+
+.journal-entry__info > * {
+  margin: 0px;
+}
+
+.journal-entry__info__location {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.journal-entry__info__title {
+  margin-bottom: 20px;
+}
+
+.journal-entry__info__date {
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.journal-entry__info__text {
+  font-size: 14px;
+}
