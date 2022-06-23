@@ -1,0 +1,41 @@
+.app {
+  width: 200px;
+  margin: auto;
+  margin-top: 10px;
+  padding: 50px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px;
+  
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.form__input {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid gray;
+}
+input[type="text"]:focus {color:purple}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.form__submit {
+  padding: 10px;
+  font-size: 14px;
+  width: 100px;
+  margin: auto;
+  border: none;
+  background-color: purple;
+  color: white;
+  border-radius: 6px;
+}
