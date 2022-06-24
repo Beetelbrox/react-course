@@ -1,13 +1,18 @@
-import React from "../../solo-project-1/node_modules/@types/react";
+import React from "react";
 import Navbar from "./components/Navbar";
 import Main from "./components/Main";
 
-const App = () => (
-    <React.Fragment className="container">
-        <Navbar />
-        <Main />
-    </React.Fragment>
+const App = () => {
+    const [darkMode, setDarkMode] = React.useState(false)
+    const toggleDarkMode = () => setDarkMode(prev => !prev)
 
-)
+    return (
+        <div className="container">
+            <Navbar darkMode={darkMode} darkModeHandler={toggleDarkMode}/>
+            <Main darkMode={darkMode}/>
+        </div>
+    )   
+
+}
 
 export default App;

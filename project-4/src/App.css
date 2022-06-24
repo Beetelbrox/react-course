@@ -1,0 +1,78 @@
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid gray;
+  width: 140px;
+}
+
+.sidebar__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 10px;
+  margin: 0;
+}
+
+.sidebar__header > h1 {
+  margin: 0;
+}
+
+.add-note-button {
+  background-color: rgb(71, 43, 96);
+  color: white;
+  font-size: 24px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+}
+.add-note-button:hover {
+  background-color: rgb(128, 75, 173);
+}
+
+.notes {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.note {
+  padding: 12px 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.note > h5 {  margin: 0px; }
+
+.note:hover {
+  background-color: rgb(71, 43, 96);
+  color: white;
+  font-weight: bold;
+}
+
+.no-notes-screen {
+  text-align: center;
+}
+
+.no-notes-screen__button {
+  padding: 10px 16px;
+}
+
+.delete-button { display: none }
+
+.note:hover > .delete-button {
+  display: block;
+  background-color: Transparent;
+  border: none;
+  color: white;
+}
+
+.note:hover > .delete-button:hover {
+  color: lightgray;
+}

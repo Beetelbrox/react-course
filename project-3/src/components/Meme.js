@@ -9,11 +9,13 @@ const Meme = () => {
     }
 
     const [meme, setMeme] = React.useState(DEFAULT_MEME)
-    const [allMemeImages, setAllMemeImages] = React.useState([DEFAULT_MEME])
+    const [allMemes, setAllMemes] = React.useState([])
 
-    const getRandomImg = () => {
-        const random_ix = Math.floor(Math.random() * allMemeImages.length)
-        setMeme(prevState => ({...prevState, randomImage: allMemeImages[random_ix]}))
+    const getRandomImg = (event) => {
+        event.preventDefault();
+        const random_ix = Math.floor(Math.random() * allMemes.length)
+        console.log(allMemes[random_ix])
+        setMeme(prevState => ({...prevState, randomImage: allMemes[random_ix].url}))
     }
 
     const handleChange = (event) => {
@@ -25,9 +27,15 @@ const Meme = () => {
 
     }
 
+    React.useEffect(() => {
+        fetch("https://api.imgflip.com/get_memes")
+            .then(res => res.json())
+            .then(data => setAllMemes(data.data.memes))
+    }, [])
+
     return (
         <main>
-            <form className="form" onChange={handleChange}>
+            <form className="form" onSubmit={getRandomImg} onChange={handleChange}>
                 <input 
                     type="text"
                     placeholder="Top text"
@@ -44,7 +52,6 @@ const Meme = () => {
                 />
                 <button
                     className="form__button"
-                    onClick={getRandomImg}
                 >
                     Get a new meme image 🖼️
                 </button>

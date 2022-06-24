@@ -1,13 +1,11 @@
 body {
   margin: 0;
   font-family: Inter, sans-serif;
-  background-color: #282D35;
 }
 
 .nav {
   display: flex;
   align-items: center;
-  background-color: #21222A;
   padding: 30px 25px;
 }
 
@@ -25,15 +23,41 @@ body {
   margin-bottom: 0;
 }
 
+.light {
+  background-color: white;
+  color: black;
+}
+
+.nav--light {
+  background-color: white;
+  color: black;
+  box-shadow: 0px 1px 10px darkgray;
+  position: relative;
+  z-index: 10;
+}
+
+.dark {
+  background-color: #282D35;
+  color: white;
+}
+
+.nav--dark {
+  background-color: rgb(26, 26, 26);
+  color: white;
+}
+
+
 .nav--title {
   color: #DEEBF8;
   font-weight: 600;
   margin: 0;
+  box-shadow: 10px, 10px, 10px, black;
 }
 
 main {
   padding: 57px 27px;
   color: white;
+  height: 100vh;
 }
 
 .main--title {
@@ -56,4 +80,77 @@ main {
 .main--list > li::marker {
   font-size: 1.4rem;
   color: #61DAFB;
+}
+
+.nav__switch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 30px;
+}
+
+.unSelected {
+  color: gray;
+  font-weight: 100;
+}
+
+.unSelectedDark {
+  color: lightgray;
+}
+
+/* Hide default HTML checkbox */
+.nav__switch input {
+  display: none;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #282D35;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 5px;
+  bottom: 5px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: white;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(22px);
+  -ms-transform: translateX(22px);
+  transform: translateX(22px);
+  background-color: #282D35;
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
